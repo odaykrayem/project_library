@@ -16,6 +16,12 @@
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#11CFC5</color>
 
+    <color name="whit_card_bg">#ffffff</color>
+    <color name="home_bg_color">#fffefa</color>
+    <color name="main_theme_color">#05c46b</color>
+
+    <color name="transparent">#00000000</color>
+
 
     <!--colors for crop activity-->
     <!--<color name="ucrop_color_toolbar">@color/teal_500</color>-->

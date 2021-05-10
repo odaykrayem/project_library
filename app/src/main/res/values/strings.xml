@@ -9,4 +9,12 @@
 
     <!--error messages-->
 
+    <!-- home strings -->
+    <string name="categories_title">Categories</string>
+    <string name="trending_title">Trending</string>
+    <string name="see_all">see all</string>
+    <string name="trending_subtitle">Discover what other people are reading</string>
+    <string name="discover_more">discover more</string>
+
+
 </resources>

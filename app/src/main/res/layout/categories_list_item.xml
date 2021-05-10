@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/category_box_width"
+    android:layout_height="@dimen/category_box_height"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/default_radius_for_cards"
+    app:cardElevation="@dimen/cards_elevation"
+    android:backgroundTint="@color/whit_card_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+    <ImageView
+        android:id="@+id/cat_icon_id"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:layout_below="@id/cat_icon_id"
+        android:id="@+id/cat_name_txt_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/main_theme_color"
+        android:textSize="@dimen/font_large"/>
+    <TextView
+        android:id="@+id/cat_books_count"
+        android:layout_below="@id/cat_name_txt_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/main_theme_color"
+        android:textSize="@dimen/font_small"
+        android:alpha="0.6"/>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
+
+
+
+

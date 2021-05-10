@@ -26,4 +26,9 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void onHomeClick(View View){
+        startActivity(new Intent(this,HomeActivity.class));
+
+    }
+
 }
