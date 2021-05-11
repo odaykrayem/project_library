@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.digitalminds.projectlibrary.R;
 import com.digitalminds.projectlibrary.models.Book;
 
-public class TrendingBooksAdapter extends RecyclerView.Adapter<TrendingBooksAdapter.ViewHolder>{
+public class BooksCardAdapter extends RecyclerView.Adapter<BooksCardAdapter.ViewHolder>{
 
 
     private Book[] books;
 
     // RecyclerView recyclerView;
-    public TrendingBooksAdapter(Book[] books) {
+    public BooksCardAdapter(Book[] books) {
         this.books = books;
     }
 
@@ -27,7 +27,7 @@ public class TrendingBooksAdapter extends RecyclerView.Adapter<TrendingBooksAdap
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //the usual shit
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.trending_book_list_item, parent, false);
+        View listItem= layoutInflater.inflate(R.layout.books_list_item, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
 
         return viewHolder;
@@ -36,13 +36,12 @@ public class TrendingBooksAdapter extends RecyclerView.Adapter<TrendingBooksAdap
 
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BooksCardAdapter.ViewHolder holder, int position) {
         Book book = books[position];
 
         //todo : use glide for static image measurements
         holder.bookImage.setImageResource(R.drawable.home_header_bg);
         holder.bookTitle.setText(book.getBookTitle());
-        holder.bookAuthorName.setText(book.getBookAuthorName());
 
 
     }
@@ -56,13 +55,11 @@ public class TrendingBooksAdapter extends RecyclerView.Adapter<TrendingBooksAdap
 
         public ImageView bookImage;
         public TextView bookTitle;
-        public TextView bookAuthorName;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            this.bookImage = itemView.findViewById(R.id.trending_book_image);
-            this.bookTitle = itemView.findViewById(R.id.trending_book_title);
-            this.bookAuthorName = itemView.findViewById(R.id.trending_book_author_name);
+            this.bookImage = itemView.findViewById(R.id.book_image);
+            this.bookTitle = itemView.findViewById(R.id.book_title);
         }
     }
 }

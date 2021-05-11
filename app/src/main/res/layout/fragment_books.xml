@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BooksFragment">
+
+    <FrameLayout
+        android:id="@+id/books_search_box_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/search_card_height"
+        android:layout_marginTop="@dimen/home_margin_between_title_content"
+        android:layout_marginStart="@dimen/search_card_margin_start"
+        android:layout_marginEnd="@dimen/search_card_margin_end"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/search_bar_shape">
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/books_search_box_layout"
+        android:layout_marginTop="@dimen/home_margin_between_title_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frag_book_recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

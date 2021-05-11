@@ -15,6 +15,8 @@
     <string name="see_all">see all</string>
     <string name="trending_subtitle">Discover what other people are reading</string>
     <string name="discover_more">discover more</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

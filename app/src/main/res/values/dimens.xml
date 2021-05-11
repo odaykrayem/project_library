@@ -25,6 +25,10 @@
     <dimen name="search_card_margin_top_bottom">40dp</dimen>
     <dimen name="search_box_radius">18dp</dimen>
 
+    <!--for books frament -->
+    <dimen name="book_height">110dp</dimen>
+    <dimen name="book_width">80dp</dimen>
+
     <dimen name="default_radius_for_cards">18dp</dimen>
     <dimen name="default_radius_for_books">12dp</dimen>
     <dimen name="default_radius_for_buttons">18dp</dimen>

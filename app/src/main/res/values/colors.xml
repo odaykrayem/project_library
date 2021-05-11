@@ -22,6 +22,8 @@
 
     <color name="transparent">#00000000</color>
 
+    <color name="search_bar_stroke">#dedede</color>
+
 
     <!--colors for crop activity-->
     <!--<color name="ucrop_color_toolbar">@color/teal_500</color>-->

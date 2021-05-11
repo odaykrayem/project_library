@@ -12,10 +12,12 @@ public class Book {
         this.bookAuthorName = bookAuthorName;
     }
 
+    //for dummy data purpose
     public Book(String bookTitle, String bookAuthorName) {
         this.bookTitle = bookTitle;
         this.bookAuthorName = bookAuthorName;
     }
+
 
     public String getBookImagePath() {
         return bookImagePath;

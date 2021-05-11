@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clipToPadding="false"
+    android:background="@color/home_bg_color"
+    android:fitsSystemWindows="true"
+    tools:context=".BooksActivity">
+
+    <!-- implement the back button functionality-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="@dimen/home_margin_from_screen_for_boxes"
+            android:layout_marginStart="@dimen/home_margin_from_screen_for_boxes"
+            android:layout_marginBottom="@dimen/home_margin_from_screen_for_boxes"
+            android:clickable="true"/>
+    </FrameLayout>
+
+    <com.kekstudio.dachshundtablayout.DachshundTabLayout
+        android:id="@+id/categories_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable"
+        app:ddCenterAlign="true"
+        app:ddAnimatedIndicator="dachshund"
+        app:ddIndicatorColor="@color/main_theme_color"
+        app:tabTextColor="@color/darkTextColor"
+        app:tabRippleColor="@color/transparent"
+        />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="@dimen/cards_elevation"
+        app:cardCornerRadius="@dimen/default_radius_for_cards"
+        style="@style/CustomCardViewStyleForFragment"
+        app:backgroundTint="@color/whit_card_bg"
+        android:paddingTop="20dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="@dimen/home_margin_between_title_content"
+        >
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/books_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"/>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+</LinearLayout>

@@ -15,7 +15,7 @@ public class LoginActivity extends AppCompatActivity {
         //for changing status bar icon colors
         if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-            getWindow().setStatusBarColor(getResources().getColor(R.color.login_bk_color));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.home_bg_color));
         }
         setContentView(R.layout.activity_login);
     }
@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onHomeClick(View View){
-        startActivity(new Intent(this,HomeActivity.class));
+        startActivity(new Intent(this,BooksActivity.class));
 
     }
 
