@@ -156,12 +156,7 @@ public class HomeActivity extends AppCompatActivity {
         //first check if user is connected to internet
         if (Utility.checkInternetConnection(this)) {
             //todo need to check the access for firebase in another thread cuz we can't make connection on UI thread
-//            if(!Utility.isReachableUrl(getApplicationContext(), fireBaseUrl)) {
-//                //todo add string resource
-//                redirectMessage = "you must connect to a vpn service first because our services are not available in your country";
-//                redirectToOfflineMode(redirectMessage);
-//            }
-            // connected to the internet continue ...
+            //connected to the internet continue ...
             recentBooks = new ArrayList<>();
             mRecentBooksAdapter = new RecentBooksAdapter(this, recentBooks);
             mRecentBooksHomeListView.setHasFixedSize(true);
@@ -212,7 +207,6 @@ public class HomeActivity extends AppCompatActivity {
                             Category category = categoryInfo.getValue(Category.class);
                             String name = category.getCategoryName(currentLanguage);
                             //checking if this categoryName equals all in different languages too
-                            //todo CHANNNNGGGGEEESSSSSS
                             if(name.equals(Const.CATEGORY_ALL_EN.trim())||name.equals(Const.CATEGORY_ALL_AR.trim())||name.equals(Const.CATEGORY_ALL_KU.trim()))
                                 continue;
                             categories.add(category);

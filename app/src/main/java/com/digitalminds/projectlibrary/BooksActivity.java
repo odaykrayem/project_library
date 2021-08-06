@@ -84,7 +84,6 @@ public class BooksActivity extends AppCompatActivity {
             //connected :
             categories = new ArrayList<>();
 
-            //todo CHANNNNNNGGGGGGEEEEESSSS
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Const.CATEGORIES_REFERENCE);
 
             ref.addValueEventListener(new ValueEventListener() {
@@ -119,7 +118,6 @@ public class BooksActivity extends AppCompatActivity {
             //todo make a better way for loading visualisation
             progressDialog.dismiss();
             Toast.makeText(this, "Please check your Internet Connection", Toast.LENGTH_SHORT).show();
-            //todo : after making the downloaded books activity redirect the user into downloaded books for offline mode 0_~
 
         }
 
@@ -128,7 +126,6 @@ public class BooksActivity extends AppCompatActivity {
 
     }
 
-    //todo make sure this new code works
     private void prepareBookPager(ViewPager mBooksPager, List<Category> categories) {
         //initialize the adapter
         mTabsAdapter = new BooksViewPagerAdapter(getSupportFragmentManager());

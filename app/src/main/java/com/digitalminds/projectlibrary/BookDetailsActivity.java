@@ -59,14 +59,12 @@ public class BookDetailsActivity extends AppCompatActivity {
     ImageView bookImageBack;
     TextView bookNameBack;
     TextView authorNameBack;
-    //todo think about adding readers text to the layout ?
     TextView bookCategory1;
     TextView downloads;
     TextView descriptionText;
 
     ImageView backBtn;
 
-    //todo deal with book model + the callers and data senders (adapters and on item click listeners )
     //extras
     TextView bookLanguage;
     TextView bookPagesNumber;
@@ -123,7 +121,6 @@ public class BookDetailsActivity extends AppCompatActivity {
         downloads = findViewById(R.id.book_details_downloads_txt);
         descriptionText = findViewById(R.id.book_details_description_txt);
         read = findViewById(R.id.read_book);
-        //todo DO NOT FORGET TO DEAL WITH THOSE VARIABLES I KNOW YOU ARE TOO LAZY TO DO SO -_-
         bookLanguage = findViewById(R.id.book_details_language_txt);
         bookPagesNumber = findViewById(R.id.book_details_pages_txt);
 
@@ -140,7 +137,6 @@ public class BookDetailsActivity extends AppCompatActivity {
         authorNameBack.setText(authorName);
 
         //set the description and category based on current app language
-        //todo CHANNNNGGGGEEESSSSS
         switch (currentLanguage){
             case SharedPrefs.APP_LANGUAGE_ENGLISH:
                 descriptionText.setText(descriptionEN);
@@ -173,7 +169,6 @@ public class BookDetailsActivity extends AppCompatActivity {
         }
 
 
-        //todo a reminder for dealing with book language and pages number parameter
 
         downloadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,7 +374,6 @@ public class BookDetailsActivity extends AppCompatActivity {
             bk.setId(id);
             bk.setLanguage(bookLanguageString);
             bk.setPagesNumber(bookPagesNumberString);
-            //todo need more info to store here
 
             //saving book details offline
             HomeActivity.myappdatabas.myDao().addBook(bk);

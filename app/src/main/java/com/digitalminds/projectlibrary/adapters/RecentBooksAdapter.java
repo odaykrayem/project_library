@@ -52,8 +52,7 @@ public class RecentBooksAdapter extends RecyclerView.Adapter<RecentBooksAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Book book = books.get(position);
 
-        Log.e("TTTTTTTTAAAAAAGGGGGGGG", book.getBookImagePath()+"\n"+book.getBookTitle()+"\n"+book.getBookAuthorName());
-        //todo : update the image measurements
+        //todo : update the image measurements if needed
         //set the book image
         Glide.with(context)
                 .load(book.getBookImagePath())

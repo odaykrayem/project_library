@@ -22,9 +22,6 @@ public class Book {
     String bookReaders;
     String bookDownloads;
 
-//    //todo put those with the admin details to upload
-//    //todo 2 use it here to display the recently uploaded books.. stupid huh ?... there no other way -_-
-//    String bookUploadDate;
     String bookPagesNumber;
     String bookLanguage;
 

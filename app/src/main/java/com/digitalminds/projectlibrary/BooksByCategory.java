@@ -139,11 +139,6 @@ public class BooksByCategory extends AppCompatActivity {
             //todo make a better way for loading visualisation
             progressDialog.dismiss();
             Toast.makeText(this, "Please check your Internet Connection and try again", Toast.LENGTH_SHORT).show();
-            //todo : after making the downloaded books activity redirect the user into downloaded books for offline mode 0_~
-            // todo make sure this code works right
-//            Intent i = new Intent(this, DownloadsActivity.class);
-//            startActivity(i);
-//            finish();
         }
 
 

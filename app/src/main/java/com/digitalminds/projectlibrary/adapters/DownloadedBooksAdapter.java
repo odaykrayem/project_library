@@ -48,7 +48,7 @@ public class DownloadedBooksAdapter extends RecyclerView.Adapter<DownloadedBooks
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Booksdb book = books.get(position);
 
-        //todo : update the image measurements
+        //todo : update the image measurements if needed
         //set the book image
         Glide.with(context)
                 .load(book.getBookImage())
