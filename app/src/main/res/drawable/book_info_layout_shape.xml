@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:angle="270"
+                android:endColor="@color/book_info_layout"
+                android:startColor="@color/book_info_layout" />
+            <corners
+                android:radius="10dp" />
+
+        </shape>
+    </item>
+</selector>

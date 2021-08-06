@@ -4,8 +4,8 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+<!--        <item name="android:windowLightStatusBar">true</item>-->
+<!--        <item name="android:statusBarColor">@color/home_bg_color</item>-->
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -13,62 +13,29 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- The launcher theme. It sets the main window background to the launch_screen drawable -->
 
-    <!--styles for app-->
-    <!--df dialog-->
 
-    <style name="viewParent">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+
+
+    <style name="CustomCardViewStyleLTR" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners_LTR</item>
     </style>
 
-    <style name="viewParent.headerText">
-        <item name="android:textColor">@color/contentTextColor</item>
-        <item name="android:textSize">@dimen/headerTextSize</item>
-        <item name="android:textStyle">bold</item>
-    </style>
 
-    <style name="viewParent.headerText.NoMode">
-        <item name="android:textColor">@color/darkTextColor</item>
-    </style>
-
-    <style name="parent">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-    </style>
-
-    <style name="modifiedEditText" parent="parent">
-        <item name="android:textSize">@dimen/newsMoreTextSize</item>
-        <item name="android:backgroundTint">@color/primaryTextColor</item>
-    </style>
-
-    <style name="loginButton" parent="viewParent">
-        <item name="android:background">@drawable/button_background_blue</item>
-        <item name="android:textColor">@color/whiteTextColor</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="rounded_corners_button" parent="viewParent">
-        <item name="android:background">@drawable/button_background_blue</item>
-        <item name="android:textColor">@color/whiteTextColor</item>
-        <item name="android:textStyle">bold</item>
+    <style name="ShapeAppearanceOverlay_card_custom_corners_LTR" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeTopRight">18dp</item>
+        <item name="cornerSizeBottomRight">18dp</item>
     </style>
 
-    <style name="spinnerHintText" parent="parent">
-        <item name="android:textSize">@dimen/newsMoreTextSize</item>
-        <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:paddingLeft">5dp</item>
-    </style>
-
-    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    <style name="CustomCardViewStyleRTL" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners_RTL</item>
     </style>
 
 
-    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+    <style name="ShapeAppearanceOverlay_card_custom_corners_RTL" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">18dp</item>
         <item name="cornerSizeBottomLeft">18dp</item>
@@ -76,19 +43,17 @@
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
 
+
     <style name="CustomCardViewStyleForFragment" parent="@style/Widget.MaterialComponents.CardView">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners_for_fragment</item>
+        <item name="shapeAppearanceOverlay">@style/CustomCardViewStyleForFragment_custom_top_corners</item>
     </style>
 
 
-    <style name="ShapeAppearanceOverlay_card_custom_corners_for_fragment" parent="">
+    <style name="CustomCardViewStyleForFragment_custom_top_corners" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">18dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
         <item name="cornerSizeTopRight">18dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
     </style>
-
 
 
     <style name="ShapeAppearanceOverlay_Button_custom_corners" parent="">
@@ -100,9 +65,7 @@
         <item name="background">@color/main_theme_color</item>
     </style>
 
-    <style name="noRipple" parent="Theme.MaterialComponents">
-        <item name="rippleColor">@android:color/transparent</item>
-    </style>
+
 
 
 

@@ -10,16 +10,23 @@
     <FrameLayout
         android:id="@+id/books_search_box_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/search_card_height"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/home_margin_between_title_content"
         android:layout_marginStart="@dimen/search_card_margin_start"
         android:layout_marginEnd="@dimen/search_card_margin_end"
         android:layout_alignParentTop="true"
         android:background="@drawable/search_bar_shape">
-        <androidx.appcompat.widget.SearchView
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:textSize="@dimen/font_small"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="40dp"
+            android:backgroundTint="@color/transparent"
+            android:drawableStart="@drawable/ic_search"
+            android:inputType="text"
+            android:id="@+id/search_edit_text" />
     </FrameLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_below="@id/books_search_box_layout"
@@ -27,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_gravity="center_horizontal"
             android:id="@+id/frag_book_recycler_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

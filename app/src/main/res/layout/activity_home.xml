@@ -9,7 +9,7 @@
     android:overScrollMode="never">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/home_bg_color"
         >
 
@@ -20,7 +20,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/home_header_bg"/>
+            android:src="@drawable/home_header_bg" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/home_search_box_layout"
@@ -31,21 +31,51 @@
             android:layout_marginEnd="@dimen/search_card_margin_end"
             android:layout_marginBottom="@dimen/search_card_margin_top_bottom"
             app:cardCornerRadius="@dimen/search_box_radius">
-            <androidx.appcompat.widget.SearchView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/settings_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_settings"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:textSize="@dimen/font_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@id/settings_btn"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableStart="@drawable/ic_search"
+                    android:inputType="text"
+                    android:id="@+id/search_edit_text" />
+
+
+            </RelativeLayout>
+
+
 
         </androidx.cardview.widget.CardView>
 
+        <!--get the custom rounds from this url
+        https://github.com/captain-miao/OptionRoundCardview-->
         <com.google.android.material.card.MaterialCardView
             android:layout_below="@id/home_search_box_layout"
             android:id="@+id/trending_box"
             android:layout_width="match_parent"
             android:backgroundTint="@color/whit_card_bg"
-            style="@style/CustomCardViewStyle"
+            style="@style/CustomCardViewStyleLTR"
             app:cardElevation="@dimen/cards_elevation"
-            android:layout_height="330dp"
-            android:layout_marginStart="@dimen/home_margin_from_screen_for_boxes">
+            android:layout_height="wrap_content"
+            android:minHeight="330dp"
+            android:layout_marginEnd="@dimen/home_margin_from_screen_for_boxes">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -66,7 +96,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentTop="true"
                     android:layout_marginEnd="@dimen/home_margin_from_screen_for_titles"
                     android:gravity="bottom"
@@ -118,7 +148,7 @@
             />
 
         <TextView
-            android:id="@+id/categories_more_txt_click"
+            android:id="@+id/categories_see_more"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/categories_title_txt"
@@ -126,6 +156,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/home_margin_from_screen_for_titles"
             android:gravity="bottom"
+            android:onClick="goToBooksActivity"
             android:text="@string/see_all"
             android:textSize="@dimen/font_small"
             android:textStyle="bold" />
@@ -148,12 +179,58 @@
 
         </androidx.core.widget.NestedScrollView>
 
+        <TextView
+            android:layout_below="@id/categories_scroll_layout"
+            android:id="@+id/downloads_title_txt"
+            android:gravity="bottom"
+            android:layout_alignParentStart="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/search_card_margin_top_bottom"
+            android:layout_marginStart="@dimen/home_margin_from_screen_for_titles"
+            android:textSize="@dimen/font_xxlarge"
+            android:textStyle="bold"
+            android:text="@string/downloads_txt"
+            />
+
+        <TextView
+            android:id="@+id/downloads_see_all_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/downloads_title_txt"
+            android:layout_below="@id/categories_scroll_layout"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/home_margin_from_screen_for_titles"
+            android:gravity="bottom"
+            android:onClick="goToDownloadsActivity"
+            android:text="@string/see_all"
+            android:textSize="@dimen/font_small"
+            android:textStyle="bold" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_marginTop="@dimen/home_margin_between_title_content"
+            android:id="@+id/downloads_scroll_layout"
+            android:layout_below="@id/downloads_title_txt"
+            android:layout_marginBottom="@dimen/home_margin_between_title_content"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/downloads_home_list_view"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"/>
+
+        </androidx.core.widget.NestedScrollView>
+
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:id="@+id/open_all_books_btn"
-            android:layout_below="@id/categories_scroll_layout"
+            android:layout_below="@id/downloads_scroll_layout"
             android:text="@string/discover_more"
             android:gravity="center"
             android:backgroundTint="@color/main_theme_color"

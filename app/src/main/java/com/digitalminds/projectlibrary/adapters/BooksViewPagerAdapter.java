@@ -22,7 +22,7 @@ public class BooksViewPagerAdapter extends FragmentPagerAdapter {
         fragmentList.add(fragment);
     }
 
-    public BooksViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+    public BooksViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 

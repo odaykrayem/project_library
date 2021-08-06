@@ -34,6 +34,7 @@
     <dimen name="default_radius_for_buttons">18dp</dimen>
 
     <dimen name="cards_elevation">8dp</dimen>
+    <dimen name="book_image_elevation">10dp</dimen>
 
     <!--for font sizes -->
     <dimen name="font_extra_small">10sp</dimen>
@@ -45,5 +46,9 @@
     <dimen name="font_xxlarge">22sp</dimen>
     <dimen name="font_xxxlarge">24sp</dimen>
     <dimen name="font_banner">66sp</dimen>
+    <dimen name="book_details_image_width">130dp</dimen>
+    <dimen name="book_details_image_height">170dp</dimen>
+    <dimen name="book_details_card_top_margin">90dp</dimen>
+    <dimen name="bookdetails_image_top_margin">10dp</dimen>
 
 </resources>

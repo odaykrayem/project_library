@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">المكتبة</string>
+    <string name="categories_title">التصنيفات</string>
+    <string name="trending_title">شائع</string>
+    <string name="see_all">عرض الكل</string>
+    <string name="trending_subtitle">اكتشف ما يقرأ الآخرون</string>
+    <string name="discover_more">اكتشف المزيد</string>
+    <string name="book_details_rating">التقييم</string>
+    <string name="book_details_pages">عدد الصفحات</string>
+    <string name="book_details_language">اللغة</string>
+    <string name="book_details_downloads">التحميلات</string>
+    <string name="books_details_Description">وصف الكتاب</string>
+    <string name="book_details_btn_read_this_book">فتح الكتاب للقراءة</string>
+    <string name="bookmarked">معلمة</string>
+    <string name="home">الصقحة الرئيسة</string>
+    <string name="shares">مشاركة</string>
+    <string name="screenshot">لقطة شاشة</string>
+    <string name="downloads_txt">عدد التحميلات</string>
+    <string name="settings">الاعدادات</string>
+    <string name="language">لغة التطبيق</string>
+    <string name="search">بحث</string>
+</resources>

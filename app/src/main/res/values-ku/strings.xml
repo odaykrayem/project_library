@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">pirtûkxane</string>
+    <string name="categories_title">Kategorî</string>
+    <string name="trending_title">nashatî</string>
+    <string name="see_all">hemî bibînin</string>
+    <string name="trending_subtitle">Tiştê ku mirovên din dixwînin kifş bikin</string>
+    <string name="discover_more">bêtir kifş bikin</string>
+    <string name="book_details_rating">Nirxandin</string>
+    <string name="book_details_pages">Hejmara rûpelan</string>
+    <string name="book_details_language">Ziman</string>
+    <string name="book_details_downloads">daxistinan</string>
+    <string name="books_details_Description">Terîf</string>
+    <string name="book_details_btn_read_this_book">Vê Pirtûkê Bixwînin</string>
+    <string name="bookmarked">bookmarked</string>
+    <string name="home">şev</string>
+    <string name="shares">par</string>
+    <string name="screenshot">screenshot bikişîne</string>
+    <string name="downloads_txt">Daxistin hejmar</string>
+    <string name="settings">settings</string>
+    <string name="language">App Language</string>
+    <string name="search_result_header">searching results for : </string>
+    <string name="search">search</string>
+</resources>
