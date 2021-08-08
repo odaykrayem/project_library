@@ -190,7 +190,7 @@
             android:layout_marginStart="@dimen/home_margin_from_screen_for_titles"
             android:textSize="@dimen/font_xxlarge"
             android:textStyle="bold"
-            android:text="@string/downloads_txt"
+            android:text="@string/book_details_downloads"
             />
 
         <TextView
