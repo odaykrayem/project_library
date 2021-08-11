@@ -261,7 +261,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setUpLanguage() {
-
         currentLanguage = LocaleHelper.getLanguage(this);
     }
 
