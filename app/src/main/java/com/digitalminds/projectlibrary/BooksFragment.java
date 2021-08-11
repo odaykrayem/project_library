@@ -195,7 +195,7 @@ public class BooksFragment extends Fragment {
                 });
             }else {
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Const.BOOKS_REFERENCE);
-                Query query = ref.orderByChild(Const.BOOK_DETAILS_KEY_CATEGORY_EN).equalTo(mCategoryEN);
+                Query query = ref.orderByChild(Const.BOOK_DETAILS_CATEGORY_NAME_EN).equalTo(mCategoryEN);
 
                 query.addValueEventListener(new ValueEventListener() {
                     @Override

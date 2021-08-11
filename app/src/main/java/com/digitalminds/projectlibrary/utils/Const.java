@@ -3,7 +3,9 @@ package com.digitalminds.projectlibrary.utils;
 public class Const {
     public static final String BOOKS_REFERENCE = "Books";
 
-    public static final String BOOK_DETAILS_CATEGORY_NAME="bookCategoryName";
+    public static final String BOOK_DETAILS_CATEGORY_NAME_EN="bookCategoryNameEN";
+    public static final String BOOK_DETAILS_CATEGORY_NAME_AR="bookCategoryNameAR";
+    public static final String BOOK_DETAILS_CATEGORY_NAME_KU="bookCategoryNameKU";
 
     public static final String CATEGORIES_REFERENCE = "Category";
     public static final String KEY_CATEGORIES_EN ="en";

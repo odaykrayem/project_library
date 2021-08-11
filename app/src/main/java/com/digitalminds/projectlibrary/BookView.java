@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.digitalminds.projectlibrary.helper.LocaleHelper;
 import com.digitalminds.projectlibrary.models.Book;
+import com.digitalminds.projectlibrary.utils.Const;
 import com.digitalminds.projectlibrary.utils.SharedPrefs;
 import com.digitalminds.projectlibrary.utils.Utility;
 import com.github.barteksc.pdfviewer.PDFView;
@@ -107,9 +108,9 @@ public class BookView extends AppCompatActivity implements OnLoadCompleteListene
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         Intent i = getIntent();
-        url = i.getStringExtra("pdfUrl");
-        id = i.getStringExtra("bookId");
-        bookName = i.getStringExtra("bookName");
+        url = i.getStringExtra(Const.BOOK_DETAILS_KEY_URL);
+        id = i.getStringExtra(Const.BOOK_DETAILS_KEY_ID);
+        bookName = i.getStringExtra(Const.BOOK_DETAILS_KEY_TITLE);
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("bookmarks", MODE_PRIVATE);

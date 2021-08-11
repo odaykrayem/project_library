@@ -276,7 +276,7 @@ public class BookDetailsActivity extends AppCompatActivity {
                     Intent i = new Intent(BookDetailsActivity.this, BookView.class);
                     i.putExtra(Const.BOOK_DETAILS_KEY_URL, pdfUrl);
                     i.putExtra(Const.BOOK_DETAILS_KEY_ID, id);
-                    i.putExtra(Const.BOOK_DETAILS_CATEGORY_NAME, bookName);
+                    i.putExtra(Const.BOOK_DETAILS_KEY_TITLE, bookName);
                     i.putExtra(Const.BOOK_DETAILS_KEY_PAGES, bookPagesNumberString);
                     startActivity(i);
 //                }

@@ -101,7 +101,7 @@ public class BooksByCategory extends AppCompatActivity {
             mCategoryBooksList = new ArrayList<>();
 
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Const.BOOKS_REFERENCE);
-            Query query = ref.orderByChild(Const.BOOK_DETAILS_KEY_CATEGORY_EN).equalTo(mCategoryNameEN);
+            Query query = ref.orderByChild(Const.BOOK_DETAILS_CATEGORY_NAME_EN).equalTo(mCategoryNameEN);
 
             query.addValueEventListener(new ValueEventListener() {
                 @Override
