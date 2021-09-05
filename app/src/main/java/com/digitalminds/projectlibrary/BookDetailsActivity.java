@@ -30,6 +30,17 @@ import com.digitalminds.projectlibrary.offlinedata.Booksdb;
 import com.digitalminds.projectlibrary.utils.Const;
 import com.digitalminds.projectlibrary.utils.SharedPrefs;
 import com.digitalminds.projectlibrary.utils.Utility;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -68,6 +79,9 @@ public class BookDetailsActivity extends AppCompatActivity {
     //extras
     TextView bookLanguage;
     TextView bookPagesNumber;
+
+    AdView mAdView;
+    private InterstitialAd mInterstitialAd = null;
 
     // used for saving book image to gallery
     Bitmap bitmap;
@@ -169,6 +183,93 @@ public class BookDetailsActivity extends AppCompatActivity {
         }
 
 
+        //initialize for ads
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        //bide view and loading banner ads for it
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        //set listener for adView to make some actions
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+            }
+
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                // Code to be executed when an ad request fails.
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when an ad opens an overlay that
+                // covers the screen.
+            }
+
+            @Override
+            public void onAdClicked() {
+                // Code to be executed when the user clicks on an ad.
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when the user is about to return
+                // to the app after tapping on an ad.
+            }
+        });
+
+        AdRequest interstatialAdRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        mInterstitialAd = null;
+                    }
+                });
+
+        //handle interstatialAd events
+        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+            @Override
+            public void onAdDismissedFullScreenContent() {
+                // Called when fullscreen content is dismissed
+                BookDetailsActivity.this.mInterstitialAd = null;
+                Log.d("TAG", "The ad was dismissed.");
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                // Called when fullscreen content failed to show.
+                BookDetailsActivity.this.mInterstitialAd = null;
+                Log.d("TAG", "The ad failed to show.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                // Called when fullscreen content is shown.
+                // Make sure to set your reference to null so you don't
+                // show it a second time.
+                mInterstitialAd = null;
+
+                Log.d("TAG", "The ad was shown.");
+            }
+        });
+
+
 
         downloadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,6 +286,18 @@ public class BookDetailsActivity extends AppCompatActivity {
                     }
                 }
 
+                if(mInterstitialAd != null){
+                    mInterstitialAd.show(BookDetailsActivity.this);
+                }else{
+                    //the interstatialAd wasn't loaded successfuly
+                    downloadBook();
+                }
+
+
+            }
+
+            //downloadBook
+            public void downloadBook(){
                 // for saving the book image
                 bitmap = ((BitmapDrawable) bookImageBack.getDrawable()).getBitmap();
 
@@ -193,13 +306,9 @@ public class BookDetailsActivity extends AppCompatActivity {
 
                 // start by downloading the pdf file into internal storage
                 savepdf();
-
-
-
-
             }
 
-            private void savepdf() {
+            public void savepdf() {
 
                 FileLoader.with(getApplicationContext())
                         .load(pdfUrl, false) //2nd parameter is optioal, pass true to force load from network
