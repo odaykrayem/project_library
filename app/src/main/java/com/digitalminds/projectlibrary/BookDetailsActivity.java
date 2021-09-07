@@ -29,7 +29,6 @@ import com.digitalminds.projectlibrary.helper.LocaleHelper;
 import com.digitalminds.projectlibrary.offlinedata.Booksdb;
 import com.digitalminds.projectlibrary.utils.Const;
 import com.digitalminds.projectlibrary.utils.SharedPrefs;
-import com.digitalminds.projectlibrary.utils.Utility;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -189,7 +188,7 @@ public class BookDetailsActivity extends AppCompatActivity {
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        //bide view and loading banner ads for it
+        //bind view and load banner ads for it
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -286,12 +285,12 @@ public class BookDetailsActivity extends AppCompatActivity {
                     }
                 }
 
-                if(mInterstitialAd != null){
-                    mInterstitialAd.show(BookDetailsActivity.this);
-                }else{
+//                if(mInterstitialAd != null){
+//                    mInterstitialAd.show(BookDetailsActivity.this);
+//                }else{
                     //the interstatialAd wasn't loaded successfuly
                     downloadBook();
-                }
+//                }
 
 
             }
